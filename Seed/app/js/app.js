@@ -1,1 +1,1 @@
-var testApp = angular.module('testApp',[]);
+var adsApp = angular.module('adsApplication',[]);
