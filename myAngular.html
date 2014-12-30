@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app='firstApp' ng-controller='firstController'>
+<p ng-style='style'> Hello WOrlkd</p>
+<script type="text/javascript" src="Seed\app\lib\angular\angular.min.js"></script>
+<script type="text/javascript">
+	var myApp = angular.module('firstApp', []);
+	myApp.controller('firstController', function($scope){
+		$scope.style = {
+			color: 'red',
+			fontWeight: 'bold'
+		};
+	})
+</script>
+</body>
+</html>
