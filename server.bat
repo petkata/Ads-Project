@@ -1,2 +1,2 @@
 cd app
-node ..\scripts\web-server.js
+node Seed\scripts\web-server.js
