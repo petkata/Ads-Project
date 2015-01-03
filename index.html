@@ -23,105 +23,27 @@
 			</header>
 		</div>
 		<!-- LoginSidebar -->
-		<div class="col-xs-2" > 
-			<div class="dialog-box">     
-	            <p>To publish a new ad, please login.</p>                      
-				<a href="#" class="button" id = "showLogInViewBtn">Login</a>
-				<a href="#" class="button" id = "showRegisterViewBtn">Register</a>
-            </div>
-         </div>
-         <!-- Left sidebar menu -->
-	<ul id="menu">
-		<li><a href="#" class="link" id="menuHome">Home</a></li>
-		<li><a href="#" class="link" id="menuPhonebook">Phonebook</a></li>
-		<li><a href="#" class="link" id="menuAddPhone">Add Phone</a></li>
-		<li><a href="#" class="link" id="menuEditProfile">Edit Profile</a></li>
-		<li><a href="#" class="link" id="logoutBtn">Logout</a></li>
-	</ul>
+		<div ng-include="'Seed/app/templates/loginSidebar.html'"></div>
+		
+        <!-- Left sidebar navigation -->
+		<div ng-include="'Seed/app/templates/navigation.html'"></div>
+
         <!-- Ads -->
-        <div id="main" class="col-xs-8" ng-controller = "getAds">
-        	<div ng-repeat="ad in ads" class="dialog-box">
-        		<p>{{ad.title}} --- {{ad.date | date:'d-MMM-yyyy'}}</p>
-        		<div id="imgContainer">        		
-        		<!-- help to center the image -->
-        		<span class="helper"></span>
-        		<!-- default image if none uploaded -->
-        		<img src="Seed/app/img/noImage.jpg" ng-show="ad.imageDataUrl == null" class="image" />
+        <div ng-include="'Seed/app/templates/ads.html'"></div>
 
-        		<img ng-src="{{ad.imageDataUrl}}" class="image" alt="" onerror="handleMissingImg(this);"/>
-        		</div>
-        		<span id="adInfo" class="col-xs-8">
-        			<span class="adInfoBackColor">{{ad.text}}</span> <br/>
-        			Name <span class="adInfoBackColor">{{ad.ownerName}}</span><br/>
-        			Email <span class="adInfoBackColor">{{ad.ownerEmail}}</span><br/>
-        			Tel <span class="adInfoBackColor">{{ad.ownerPhone}}</span>
-        		</span>
-        	</div>
-        </div>
 		<!-- Categories -->
-		<div class="col-xs-2" > 
-			<div class="dialog-box">     
-	            <h3>Categories</h3>          
-	            <div ng-controller='getCategories'>
-					<div ng-repeat='cat in cats'>
-						{{cat.name}}
-					</div>
-				</div>
-            </div>
-         </div>
-         <div class="clearfix"></div>
-         <!-- Towns -->
-		<div class="col-xs-2 pull-right"> 
-			<div class="dialog-box">     
-	            <h3>Towns</h3>          
-	            <div ng-controller='getTowns'>
-					<div ng-repeat='town in towns'>
-						{{town.name}}
-					</div>
-				</div>
-            </div>
-         </div>
-        <!-- Registration screen -->
-	<div id="register-form" class="dialog-box">
-		<h1>Register</h1>
-		<p>
-			<label for="username">Username:</label>
-			<input type="text" id="username" />
-		</p>
-		<p>
-			<label for="password">Password:</label>
-			<input type="password" id="password" />
-		</p>
-		<p>
-			<label for="fullName">Full Name:</label>
-			<input type="text" id="fullName" />
-		</p>
-		<p class="buttons">
-			<a href="#" class="button" id = "registerBtn">Register</a>
-			<a href="#" class="link" id="registerLoginBtn">Login</a>
-		</p>
-	</div>
+		<div ng-include="'Seed/app/templates/categories.html'"></div>
 
+        <!-- Towns -->
+		<div ng-include="'Seed/app/templates/towns.html'"></div>
+
+        <!-- Registration screen -->
+		<div ng-include="'Seed/app/templates/registration.html'"></div>
 	<br/>
         <!-- Login screen -->
-	<div id="login-form" class="dialog-box">
-		<h1>Login</h1>
-		<p>
-			<label for="username">Username:</label>
-			<input type="text" id="loginUsername" />
-		</p>
-		<p>
-			<label for="password">Password:</label>
-			<input type="password" id="loginPassword" />
-		</p>
-		<p class="buttons">
-			<a href="#" class="button" id="loginLoginBtn">Login</a>
-			<a href="#" class="link" id="loginRegisterBtn">Register here</a>
-		<p>
-	</div>
+		<div ng-include="'Seed/app/templates/login.html'"></div>
 
 	<br/>
-
         <!-- Footer -->
         <div class="clearfix"></div>
         <footer>Bootstrap AngularJS</footer>

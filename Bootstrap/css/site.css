@@ -11,7 +11,7 @@ h3{
   text-align: center;
   font-weight: bold;
 }
-#menu {
+#navigation {
     float: left;
     list-style-type: none;
     background: #A9D18E;
@@ -19,7 +19,7 @@ h3{
     margin: 10px;
 }
 
-#menu li {
+#navigation li {
     margin: 8px 0;
 }
 .loginSidebar{
