@@ -112,7 +112,8 @@ footer{
 .image{
   vertical-align: middle;
   margin-left: 5px;
-  width: 100px;
+  max-width: 100px;
+  max-height: 100px;
   
  
 }
