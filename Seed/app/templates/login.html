@@ -2,14 +2,14 @@
 		<h1>Login</h1>
 		<p>
 			<label for="username">Username:</label>
-			<input type="text" id="loginUsername" />
+			<input type="text" id="loginUsername" ng-model="user.username" />
 		</p>
 		<p>
 			<label for="password">Password:</label>
-			<input type="password" id="loginPassword" />
+			<input type="password" id="loginPassword" ng-model="user.password"/>
 		</p>
 		<p class="buttons">
-			<a href="#" class="button" id="loginLoginBtn">Login</a>
-			<a href="#/register" class="link" id="loginRegisterBtn">Register here</a>
+			<a href="#/" class="button" id="loginLoginBtn" ng-click="login(user)">Login</a>
+			<a href="#/register" class="link" id="loginRegisterBtn" >Register here</a>
 		<p>
 	</div>

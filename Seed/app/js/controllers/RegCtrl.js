@@ -1,11 +1,10 @@
-adsApp.controller('RegCtrl', ['$scope', 'townsData', function($scope, townsData){
+adsApp.controller('RegCtrl', ['$scope', 'townsData', 'userData', function($scope, townsData, userData){
 	townsData.getTowns()
 	 .$promise
 	 .then(function (data){
 	 	$scope.towns = data;
-	 	console.log(data);
 	 });
 	 $scope.register = function (user){
-	 	console.log(user);
+	 	userData.register(user);
 	 }
 }]);

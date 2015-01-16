@@ -1,10 +1,12 @@
-adsApp.controller('getAds', function($scope,$http){
-	$http.get("http://softuni-ads.azurewebsites.net/api/ads")
-	.success(function(advertisements)
-	{
-		$scope.ads = advertisements.ads;
-	})
-})
+adsApp.controller('getAds',['$scope','adsData', function($scope, adsData){
+	$scope.ready = false;
+	adsData.getPublicAds()
+	.$promise
+	.then(function (data){
+		$scope.ads= data.ads; 
+		$scope.ready = true;
+	}) 
+}])
 
 
 function handleMissingImg(ele)

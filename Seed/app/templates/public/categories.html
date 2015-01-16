@@ -1,10 +1,8 @@
 <div class="dialog-box">     
-    <h3>Categories</h3>          
-    <div ng-controller='getCategories'>
-		<div ng-repeat='cat in cats'>
-			{{cat.name}}
-		</div>
-	</div>
+        <h3>Categories</h3>          
+        <ul>
+			<li ng-repeat='category in categories'>
+				{{category.name}}
+			</li>
+		</ul>
 </div>
-
-<div class="clearfix"></div>

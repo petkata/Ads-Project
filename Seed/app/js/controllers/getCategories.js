@@ -1,7 +1,7 @@
-adsApp.controller('getCategories',function($scope,$http){
-	$http.get("http://softuni-ads.azurewebsites.net/api/categories")
-	.success(function(categories)
-	{
-		$scope.cats = categories;
-	})
-})
+adsApp.controller('getCategories', ['$scope','categoriesData' ,function($scope, categoriesData){
+	categoriesData.getCategories()
+		.$promise
+		.then(function (data){
+			$scope.categories = data;
+		});
+}])

@@ -1,20 +1,23 @@
-<div id="main" class="col-xs-8" ng-controller = "getAds">
-        	<div ng-repeat="ad in ads" class="dialog-box col-xs-8">
-        		<p>{{ad.title}} --- {{ad.date | date:'d-MMM-yyyy'}}</p>
+<div id="ads">
+        <img src="Seed/app/img/loading.gif" ng-hide="ready">
+        <ul ng-cloak>
+                <li ng-repeat="ad in ads" class="dialog-box">
+                        <p>{{ad.title}} --- {{ad.date | date:'d-MMM-yyyy'}}</p>
 
-        		<div id="imgContainer" >        		
-        		<!-- help to center the image -->
-        		<span class="helper"></span>
-        		<!-- default image if none uploaded -->
-        		<img src="Seed/app/img/noImage.jpg" ng-if="ad.imageDataUrl == null" class="image" />
-        		<img ng-src="{{ad.imageDataUrl}}" class="image" alt="" onerror="handleMissingImg(this);" ng-if="ad.imageDataUrl != null"/>
-        		</div>
+                        <div id="imgContainer" >                        
+                        <!-- help to center the image -->
+                        <span class="helper"></span>
+                        <!-- default image if none uploaded -->
+                        <img src="Seed/app/img/noImage.jpg" ng-if="ad.imageDataUrl == null" class="image" />
+                        <img ng-src="{{ad.imageDataUrl}}" class="image" alt="" onerror="handleMissingImg(this);" ng-if="ad.imageDataUrl != null"/>
+                        </div>
 
-        		<span id="adInfo" class="col-xs-8">
-        			<div class="adInfoBackColor">{{ad.text}}</div> <br/>
-        			Name: <div class="adInfoBackColor">{{ad.ownerName}}</div><br/>
-        			Email: <div class="adInfoBackColor">{{ad.ownerEmail}}</div><br/>
-        			Tel: <div class="adInfoBackColor">{{ad.ownerPhone}}</div>
-        		</span>
-        	</div>
-        </div>
+                        <span id="adInfo" class="col-xs-8">
+                                <div class="adInfoBackColor">{{ad.text}}</div> <br/>
+                                Name: <div class="adInfoBackColor">{{ad.ownerName}}</div><br/>
+                                Email: <div class="adInfoBackColor">{{ad.ownerEmail}}</div><br/>
+                                Tel: <div class="adInfoBackColor">{{ad.ownerPhone}}</div>
+                        </span>
+                </li>
+        </ul>
+</div>
